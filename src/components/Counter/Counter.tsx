@@ -11,6 +11,8 @@ import { PayloadAction } from '@reduxjs/toolkit';
 import { changeProductCount, minusQuantity, plusQuantity } from '../../store';
 import { useAppDispatch } from '../../utilities';
 
+import './Counter.css';
+
 import {
   buttonStyled,
   centerStyled,
@@ -29,12 +31,8 @@ interface ICounter {
 
 export const Counter: React.FC<ICounter> = ({ id, count, totalPrice, price }) => {
   const dispatch = useAppDispatch();
-  const onMinusHandler = (): PayloadAction<{ id: number }> => {
-    return dispatch(minusQuantity({ id }));
-  };
-  const onPlusHandler = (): PayloadAction<{ id: number }> => {
-    return dispatch(plusQuantity({ id }));
-  };
+  const onMinusHandler = (): PayloadAction<{ id: number }> => dispatch(minusQuantity({ id }));
+  const onPlusHandler = (): PayloadAction<{ id: number }> => dispatch(plusQuantity({ id }));
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>): void => {
     if (+e.currentTarget.value > 0 && +e.currentTarget.value < 11) {
       dispatch(changeProductCount({ id, count: +e.currentTarget.value }));
@@ -78,7 +76,7 @@ export const Counter: React.FC<ICounter> = ({ id, count, totalPrice, price }) =>
         </Button>
       </Grid>
       {+price !== +totalPrice && (
-        <Typography variant="subtitle2" color="textSecondary" sx={typographyStyled}>
+        <Typography variant="subtitle2" color="textSecondary" sx={typographyStyled} className="typographyPrice">
           {price}₽ / шт
         </Typography>
       )}

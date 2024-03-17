@@ -10,13 +10,7 @@ import { useAppDispatch, useAppSelector } from '../../utilities';
 import { ProductsCardsColumn } from '../ProductsCardsColumn';
 import { TotalColumn } from '../TotalColumn';
 
-import {
-  appGridItemStyled,
-  appStyled,
-  boxStyled,
-  gridBasketTitleStyled,
-  topographyStyled,
-} from './styled.ts';
+import { appGridItemStyled, appStyled, boxStyled, gridBasketTitleStyled, topographyStyled } from './styled.ts';
 
 export const App: React.FC = () => {
   const { isLoading, error } = useAppSelector(state => state.productsSlice);

@@ -35,25 +35,19 @@ const productsSlice = createSlice({
   initialState,
   reducers: {
     minusQuantity: (state, action: PayloadAction<{ id: number }>) => {
-      const product: IProductsSlice | undefined = state.products.find(
-        p => p.id === action.payload.id,
-      );
+      const product: IProductsSlice | undefined = state.products.find(p => p.id === action.payload.id);
       if (product) {
         product.count = product.count - 1;
       }
     },
     plusQuantity: (state, action: PayloadAction<{ id: number }>) => {
-      const product: IProductsSlice | undefined = state.products.find(
-        p => p.id === action.payload.id,
-      );
+      const product: IProductsSlice | undefined = state.products.find(p => p.id === action.payload.id);
       if (product) {
         product.count = product.count + 1;
       }
     },
     totalPriceProduct: (state, action: PayloadAction<{ id: number }>) => {
-      const product: IProductsSlice | undefined = state.products.find(
-        p => p.id === action.payload.id,
-      );
+      const product: IProductsSlice | undefined = state.products.find(p => p.id === action.payload.id);
       if (product) {
         product.totalPrice = product.count * product.price;
       }
@@ -70,9 +64,7 @@ const productsSlice = createSlice({
       products: state.products.filter(p => p.id !== action.payload.id),
     }),
     changeProductCount: (state, action: PayloadAction<{ id: number; count: number }>) => {
-      const product: IProductsSlice | undefined = state.products.find(
-        p => p.id === action.payload.id,
-      );
+      const product: IProductsSlice | undefined = state.products.find(p => p.id === action.payload.id);
       if (product) {
         product.count = action.payload.count;
       }

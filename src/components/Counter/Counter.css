@@ -1,0 +1,5 @@
+.typographyPrice {
+  @media (max-width: 973px) {
+    display: none;
+  }
+}
