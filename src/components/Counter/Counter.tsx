@@ -11,8 +11,6 @@ import { PayloadAction } from '@reduxjs/toolkit';
 import { changeProductCount, minusQuantity, plusQuantity } from '../../store';
 import { useAppDispatch } from '../../utilities';
 
-import './Counter.css';
-
 import {
   buttonStyled,
   centerStyled,
@@ -76,7 +74,7 @@ export const Counter: React.FC<ICounter> = ({ id, count, totalPrice, price }) =>
         </Button>
       </Grid>
       {+price !== +totalPrice && (
-        <Typography variant="subtitle2" color="textSecondary" sx={typographyStyled} className="typographyPrice">
+        <Typography variant="subtitle2" color="textSecondary" sx={typographyStyled}>
           {price}₽ / шт
         </Typography>
       )}

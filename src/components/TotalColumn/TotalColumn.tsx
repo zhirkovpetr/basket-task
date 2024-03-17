@@ -30,7 +30,13 @@ export const TotalColumn: React.FC = () => {
 
   return (
     <Grid item xs={3} sx={gridStyled}>
-      <Paper>
+      <Paper
+        sx={{
+          ['@media (max-width: 900px)']: {
+            display: 'flex',
+          },
+        }}
+      >
         <Card sx={cardStyled}>
           <Grid item sx={gridBasketStyled}>
             <Typography variant="h6" component="h2" sx={gridBasketTitleStyled}>

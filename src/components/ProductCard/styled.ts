@@ -1,5 +1,5 @@
 export const paperStyled = { margin: '0 0 5px 0' };
-export const cardsStyled = { display: 'flex', justifyContent: 'space-evenly' };
+export const cardsStyled = { display: 'flex', justifyContent: 'space-around' };
 export const gridStyled = { display: 'flex' };
 export const gridMediaStyled = {
   minWidth: '68px',
@@ -21,6 +21,10 @@ export const gridDescriptionStyled = {
   display: 'block',
   textAlign: 'left',
   margin: 'auto 0',
+  ['@media (max-width: 949px)']: {
+    display: 'inline-block',
+    flexWrap: 'wrap',
+  },
 };
 export const titleStyled = { fontSize: '15px', fontWeight: '600', lineHeight: '18px' };
 export const gridTotalPriceStyled = { display: 'flex' };
@@ -37,4 +41,18 @@ export const buttonStyled = {
   minHeight: '38px',
   margin: 'auto 0',
 };
-export const typographyDeskStyled = { fontSize: '12px', lineHeight: '15px' };
+export const typographyDeskStyled = {
+  fontSize: '12px',
+  lineHeight: '15px',
+};
+
+export const gridItemStyled = {
+  display: 'flex',
+  width: '300px',
+  justifyContent: 'space-around',
+  ['@media (max-width: 815px)']: {
+    display: 'block',
+    justifyContent: 'center',
+    margin: '0 auto',
+  },
+};

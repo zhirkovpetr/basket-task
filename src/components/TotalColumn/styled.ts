@@ -1,5 +1,12 @@
-export const gridStyled = { alignItems: 'center' };
-export const cardStyled = { padding: '32px' };
+export const gridStyled = {
+  alignItems: 'center',
+};
+export const cardStyled = {
+  padding: '32px',
+  ['@media (max-width: 820px)']: {
+    padding: '5px',
+  },
+};
 export const gridTotalCostStyled = {
   display: 'flex',
   justifyContent: 'space-between',

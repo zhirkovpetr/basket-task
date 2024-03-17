@@ -10,7 +10,14 @@ import { useAppDispatch, useAppSelector } from '../../utilities';
 import { ProductsCardsColumn } from '../ProductsCardsColumn';
 import { TotalColumn } from '../TotalColumn';
 
-import { appGridItemStyled, appStyled, boxStyled, gridBasketTitleStyled, topographyStyled } from './styled.ts';
+import {
+  appGridItemStyled,
+  appStyled,
+  boxStyled,
+  gridBasketTitleStyled,
+  gridContainerColumnsStyled,
+  topographyStyled,
+} from './styled.ts';
 
 export const App: React.FC = () => {
   const { isLoading, error } = useAppSelector(state => state.productsSlice);
@@ -42,7 +49,7 @@ export const App: React.FC = () => {
         <Typography variant="h6" component="h2" sx={gridBasketTitleStyled}>
           Ваша корзина
         </Typography>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} sx={gridContainerColumnsStyled}>
           <ProductsCardsColumn />
           <TotalColumn />
         </Grid>

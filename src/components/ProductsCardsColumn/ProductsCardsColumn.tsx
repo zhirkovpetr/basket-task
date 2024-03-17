@@ -6,13 +6,13 @@ import Typography from '@mui/material/Typography';
 import { useAppSelector } from '../../utilities';
 import { ProductCard } from '../ProductCard';
 
-import { notProductsStyled } from './styled.ts';
+import { gridStyled, notProductsStyled } from './styled.ts';
 
 export const ProductsCardsColumn: React.FC = () => {
   const { products } = useAppSelector(state => state.productsSlice);
 
   return (
-    <Grid item xs={9}>
+    <Grid item xs={9} sx={gridStyled}>
       {!products.length ? (
         <Typography variant="h6" component="h2" sx={notProductsStyled}>
           Товары в корзине отсутствуют!

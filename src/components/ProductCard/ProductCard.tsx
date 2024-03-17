@@ -11,13 +11,13 @@ import Typography from '@mui/material/Typography';
 import { removeProduct, totalPriceProduct } from '../../store';
 import { useAppDispatch } from '../../utilities';
 import { Counter } from '../Counter';
-import './ProductCard.css';
 
 import {
   buttonStyled,
   cardMediaStyled,
   cardsStyled,
   gridDescriptionStyled,
+  gridItemStyled,
   gridMediaStyled,
   gridStyled,
   gridTotalPriceStyled,
@@ -54,37 +54,33 @@ export const ProductCard: React.FC<IProductCard> = ({ id, desc, img, price, titl
         <Grid item sx={gridMediaStyled}>
           <CardMedia component="img" alt="Product Image" image={img} title="Product Image" sx={cardMediaStyled} />
         </Grid>
-        <Grid item sx={gridDescriptionStyled} className="gridDescription">
+        <Grid item sx={gridDescriptionStyled}>
           <Typography variant="h6" component="h2" sx={titleStyled}>
             {title}
           </Typography>
-          <Typography
-            variant="body2"
-            color="textSecondary"
-            component="p"
-            sx={typographyDeskStyled}
-            className="productCardDesc"
-          >
+          <Typography variant="body2" color="textSecondary" component="p" sx={typographyDeskStyled}>
             {desc}
           </Typography>
         </Grid>
-        <Grid item sx={gridTotalPriceStyled}>
-          <Typography variant="h5" component="h2" sx={typographyStyled}>
-            {totalPrice}₽
-          </Typography>
-        </Grid>
-        <Counter id={id} count={count} price={price} totalPrice={totalPrice} />
-        <Grid item sx={gridStyled}>
-          <Button
-            size="small"
-            color="primary"
-            aria-label="add"
-            variant="contained"
-            sx={buttonStyled}
-            onClick={onRemoveHandler}
-          >
-            <DeleteIcon />
-          </Button>
+        <Grid item sx={gridItemStyled}>
+          <Grid item sx={gridTotalPriceStyled}>
+            <Typography variant="h5" component="h2" sx={typographyStyled}>
+              {totalPrice}₽
+            </Typography>
+          </Grid>
+          <Counter id={id} count={count} price={price} totalPrice={totalPrice} />
+          <Grid item sx={gridStyled}>
+            <Button
+              size="small"
+              color="primary"
+              aria-label="add"
+              variant="contained"
+              sx={buttonStyled}
+              onClick={onRemoveHandler}
+            >
+              <DeleteIcon />
+            </Button>
+          </Grid>
         </Grid>
       </Card>
     </Paper>
